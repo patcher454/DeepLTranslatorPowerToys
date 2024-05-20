@@ -1,0 +1,14 @@
+{
+  "ID": "a26e662baee34320bf1e288543240c66",
+  "ActionKeyword": "@@",
+  "isGlobal": false,
+  "Name": "DeepLTranslator",
+  "Description": "Provides Translation using DeepL API",
+  "Author": "patcher454",
+  "Version": "1.0.0",
+  "Language": "csharp",
+  "Website": "https://github.com/patcher454",
+  "IcoPathDark": "Images\\DeepL_Logo.png",
+  "IcoPathLight": "Images\\DeepL_Logo.png",
+  "ExecuteFileName": "Community.PowerToys.Run.Plugin.DeepLTranslator.dll"
+}
