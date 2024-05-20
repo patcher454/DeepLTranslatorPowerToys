@@ -4,7 +4,7 @@ This plug-in is designed to use the DeepL API Free plan
 
 ![DeepL Plugin Introduce](https://github.com/patcher454/DeepLTranslatorPowerToys/assets/34996184/ba435959-6dd5-4315-94af-45a1b487306d)  
 
-##How to use
+## How to use
 
 Press the `Alt + Space` key to activate the Power Toys Run
 
