@@ -38,19 +38,19 @@
 
   <ItemGroup>
     <Reference Include="PowerToys.Common.UI">
-      <HintPath>DLL\0.80.1\PowerToys.Common.UI.dll</HintPath>
+      <HintPath>DLL\64\PowerToys.Common.UI.dll</HintPath>
     </Reference>
     <Reference Include="PowerToys.ManagedCommon">
-      <HintPath>DLL\0.80.1\PowerToys.ManagedCommon.dll</HintPath>
+      <HintPath>DLL\64\PowerToys.ManagedCommon.dll</HintPath>
     </Reference>
     <Reference Include="PowerToys.Settings.UI.Lib">
-      <HintPath>DLL\0.80.1\PowerToys.Settings.UI.Lib.dll</HintPath>
+      <HintPath>DLL\64\PowerToys.Settings.UI.Lib.dll</HintPath>
     </Reference>
     <Reference Include="Wox.Infrastructure">
-      <HintPath>DLL\0.80.1\Wox.Infrastructure.dll</HintPath>
+      <HintPath>DLL\64\Wox.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Wox.Plugin">
-      <HintPath>DLL\0.80.1\Wox.Plugin.dll</HintPath>
+      <HintPath>DLL\64\Wox.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
 

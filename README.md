@@ -12,7 +12,17 @@ If you type in the following, the translation results will be output.
 
 ```
 @@{Target Language Code} {Sentences you want to translate}
-```  
+```
+
+### Examples
+English to Korean
+```
+ko hello!
+```
+Korean to English
+```
+en 안녕하세요!
+```
 
 Enter the Enter key in the result to paste with Ctrl + V.
 
