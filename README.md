@@ -26,25 +26,25 @@ This plugin allows you to use PowerToys Run for translations via the DeepL API.
 
 ### Supported Languages and Codes
 
-| Code   | Language            | Code    | Language           |
-|--------|---------------------|---------|--------------------|
-| AR     | Arabic              | IT      | Italian            |
-| BG     | Bulgarian           | JA      | Japanese           |
-| CS     | Czech               | KO      | Korean             |
-| DA     | Danish              | LT      | Lithuanian         |
-| DE     | German              | LV      | Latvian            |
-| EL     | Greek               | NB      | Norwegian Bokmål   |
-| EN     | English             | NL      | Dutch              |
-| EN_GB  | English (British)   | PL      | Polish             |
-| EN_US  | English (American)  | PT      | Portuguese         |
-| ES     | Spanish             | PT_BR   | Portuguese (Brazilian)|
-| ET     | Estonian            | PT_PT   | Portuguese (all Portuguese varieties excluding Brazilian Portuguese)|
-| FI     | Finnish             | RO      | Romanian           |
-| FR     | French              | RU      | Russian            |
-| HU     | Hungarian           | SK      | Slovak             |
-| ID     | Indonesian          | SL      | Slovenian          |
-| SV     | Swedish             | TR      | Turkish            |
-| UK     | Ukrainian           | ZH      | Chinese (simplified)|
+| Code | Language                | Code | Language                                     |
+|------|-------------------------|------|----------------------------------------------|
+| ar   | Arabic                  | it   | Italian                                      |
+| bg   | Bulgarian               | ja   | Japanese                                     |
+| cs   | Czech                   | ko   | Korean                                       |
+| da   | Danish                  | lt   | Lithuanian                                   |
+| de   | German                  | lv   | Latvian                                      |
+| el   | Greek                   | nb   | Norwegian Bokmål                             |
+| en   | English                 | nl   | Dutch                                        |
+| en_gb| English (British)       | pl   | Polish                                       |
+| en_us| English (American)      | pt   | Portuguese                                   |
+| es   | Spanish                 | pt_br| Portuguese (Brazilian)                       |
+| et   | Estonian                | pt_pt| Portuguese (all varieties except Brazilian)  |
+| fi   | Finnish                 | ro   | Romanian                                     |
+| fr   | French                  | ru   | Russian                                      |
+| hu   | Hungarian               | sk   | Slovak                                       |
+| id   | Indonesian              | sl   | Slovenian                                    |
+| sv   | Swedish                 | tr   | Turkish                                      |
+| uk   | Ukrainian               | zh   | Chinese (simplified)                         |
 
 ### Creating a DeepL Account
 
@@ -54,7 +54,7 @@ This plugin allows you to use PowerToys Run for translations via the DeepL API.
 ### Installation Instructions
 
 1. **Install PowerToys:**
-   - Download it from [PowerToys Download](https://learn.microsoft.com/ko-kr/windows/powertoys/install).
+   - Download it from [PowerToys Download](https://learn.microsoft.com/en-us/windows/powertoys/install).
 
 2. **Download and Extract the Plugin:**
    - Download the plugin zip file from [DeepLTranslator Plugin releases](https://github.com/patcher454/DeepLTranslatorPowerToys/releases/).
