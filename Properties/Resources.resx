@@ -141,4 +141,7 @@
   <data name="plugin_name" xml:space="preserve">
     <value>PowerToy DeepLTranslator</value>
   </data>
+  <data name="remove_left_spaces_description" xml:space="preserve">
+    <value>Remove left whitespace when copying translation results to the clipboard.</value>
+  </data>
 </root>

@@ -24,6 +24,7 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
     public class Main : IPlugin, IPluginI18n, ISavable, IContextMenu, IDisposable, ISettingProvider
     {
         private const string DeeplAPIKey = nameof(DeeplAPIKey);
+        private const string RemoveLeftSpaces = nameof(RemoveLeftSpaces);
 
         private static readonly PluginJsonStorage<DeepLTranslatorSetting> Storage = new PluginJsonStorage<DeepLTranslatorSetting>();
         private static readonly DeepLTranslatorSetting Settings = Storage.Load();
@@ -52,10 +53,19 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
         {
             new PluginAdditionalOption()
             {
+                Value = Settings.RemoveLeftSpaces,
+                PluginOptionType = AdditionalOptionType.Checkbox,
+                Key = RemoveLeftSpaces,
+                DisplayLabel = "Remove Left Spaces",
+                DisplayDescription = Properties.Resources.remove_left_spaces_description,
+            },
+
+            new PluginAdditionalOption()
+            {
                 TextValue = Settings.DeeplAPIKey,
                 PluginOptionType = AdditionalOptionType.Textbox,
                 Key = DeeplAPIKey,
-                DisplayLabel = "ClientId",
+                DisplayLabel = "DeepL API Key",
                 DisplayDescription = Properties.Resources.deepL_api_key_description,
             },
         };
@@ -123,8 +133,10 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
             if (settings.AdditionalOptions != null)
             {
                 var apiKey = settings.AdditionalOptions.FirstOrDefault(x => x.Key == DeeplAPIKey)?.TextValue ?? string.Empty;
-
+                var removeLeftSpace = settings.AdditionalOptions.FirstOrDefault(x => x.Key == RemoveLeftSpaces)?.Value ?? false;
+               
                 Main.Settings.DeeplAPIKey = apiKey;
+                Main.Settings.RemoveLeftSpaces = removeLeftSpace;
             }
         }
 
@@ -195,7 +207,12 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
                         {
                             if (result.Translations != null)
                             {
-                                Clipboard.SetText(result.Translations[0].Text);
+                                string resultText = result.Translations[0].Text;
+                                if (Settings.RemoveLeftSpaces)
+                                {
+                                    resultText = resultText.TrimStart();
+                                }
+                                Clipboard.SetText(resultText);
                                 ret = true;
                             }
                         }
@@ -238,7 +255,12 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
                     {
                         try
                         {
-                            Clipboard.SetText(result.Translations[0].Text);
+                            string resultText = result.Translations[0].Text;
+                            if (Settings.RemoveLeftSpaces)
+                            {
+                                resultText = resultText.TrimStart();
+                            }
+                            Clipboard.SetText(resultText);
                             ret = true;
                         }
                         catch (ExternalException e)

@@ -131,5 +131,14 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator.Properties {
                 return ResourceManager.GetString("plugin_name", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Remove left whitespace when copying translation results to the clipboard.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string remove_left_spaces_description {
+            get {
+                return ResourceManager.GetString("remove_left_spaces_description", resourceCulture);
+            }
+        }
     }
 }
