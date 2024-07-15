@@ -60,11 +60,15 @@ This plugin allows you to use PowerToys Run for translations via the DeepL API.
    - Download the plugin zip file from [DeepLTranslator Plugin releases](https://github.com/patcher454/DeepLTranslatorPowerToys/releases/).
    - Extract the zip file to:
      ```
+     %LOCALAPPDATA%/Microsoft/PowerToys/PowerToys Run/Plugins
+     ```
+     OR
+     ```
      C:\Program Files\PowerToys\RunPlugins
      ```
      OR
      ```
-     C:\Users\{username}\AppData\Local\PowerToys\RunPlugins
+     C:\Users\%USERNAME%\AppData\Local\PowerToys\RunPlugins
      ```
 3. **Restart PowerToys:** Exit and restart PowerToys.
 
