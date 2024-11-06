@@ -127,7 +127,8 @@
     <value>Copy translation result to clipboard</value>
   </data>
   <data name="deepL_api_key_description" xml:space="preserve">
-    <value>Please enter your DeepL API key</value>
+    <value>Please enter the following format
+DeepL-Auth-Key {API KEY}</value>
   </data>
   <data name="error_message_during_translation" xml:space="preserve">
     <value>An error occurred during translation.</value>

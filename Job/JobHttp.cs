@@ -62,7 +62,7 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator.Job
                                 new Translation
                                 {
                                     DetectedSourceLanguage = LangCodeEnums.ToString(LangCodeEnums.Code.UNK),
-                                    Text = Properties.Resources.error_message_during_translation
+                                    Text = Properties.Resources.invalid_api_key
                                 }
                             ],
                             TargetLangCode = LangCodeEnums.ToString(LangCodeEnums.Code.UNK)
