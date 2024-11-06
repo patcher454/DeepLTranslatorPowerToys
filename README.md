@@ -77,7 +77,8 @@ This plugin allows you to use PowerToys Run for translations via the DeepL API.
      ```
      DeepL-Auth-Key {API KEY}
      ```
-     ![image](https://github.com/patcher454/DeepLTranslatorPowerToys/assets/34996184/143849c9-4288-4af2-acc0-24f59e272f33)  
+     ![image](https://github.com/user-attachments/assets/4a867356-9ceb-4b8d-a83d-3645941191fc)
+
   
 
 ### How to Build
