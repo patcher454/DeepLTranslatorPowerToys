@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
 using Community.PowerToys.Run.Plugin.DeepLTranslator.Enums;
+using Community.PowerToys.Run.Plugin.DeepLTranslator.Job;
 using Community.PowerToys.Run.Plugin.DeepLTranslator.Models;
 
 using ManagedCommon;
@@ -28,6 +30,8 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
 
         private static readonly PluginJsonStorage<DeepLTranslatorSetting> Storage = new PluginJsonStorage<DeepLTranslatorSetting>();
         private static readonly DeepLTranslatorSetting Settings = Storage.Load();
+
+        private static Task<TranslationResult> translationTask = null;
 
         public static string PluginID => "a26e662baee34320bf1e288543240c66";
 
@@ -113,7 +117,17 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
                 return new List<Result>();
             }
 
-            return TranslationHandler.Convert(targetCode, text, Settings)
+            if (translationTask == null || translationTask.IsCompleted)
+            {
+                translationTask = JobHttp.Translation(targetCode, text, Settings.DeeplAPIKey);
+            }
+
+            var results = new List<TranslationResult>
+            {
+                translationTask.GetAwaiter().GetResult()
+            };
+            
+            return results
                 .Select(this.GetResult)
                 .ToList();
         }

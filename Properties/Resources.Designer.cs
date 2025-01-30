@@ -107,6 +107,15 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator.Properties {
         }
         
         /// <summary>
+        ///   Too many requests. Please try again later.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string error_too_many_requests {
+            get {
+                return ResourceManager.GetString("error_too_many_requests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Invalid API key. Please check the API key과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string invalid_api_key {

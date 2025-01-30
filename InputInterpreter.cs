@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Community.PowerToys.Run.Plugin.DeepLTranslator.Enums;
-using Community.PowerToys.Run.Plugin.DeepLTranslator.Job;
-using Community.PowerToys.Run.Plugin.DeepLTranslator.Models;
+﻿using Community.PowerToys.Run.Plugin.DeepLTranslator.Enums;
 
 
 using Wox.Plugin;

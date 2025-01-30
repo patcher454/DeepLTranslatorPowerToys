@@ -5,7 +5,7 @@
   "Name": "DeepLTranslator",
   "Description": "Provides Translation using DeepL API",
   "Author": "patcher454",
-  "Version": "1.0.2",
+  "Version": "1.0.3",
   "Language": "csharp",
   "Website": "https://github.com/patcher454",
   "IcoPathDark": "Images\\DeepL_Logo.png",

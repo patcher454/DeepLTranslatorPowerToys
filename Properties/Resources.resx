@@ -133,6 +133,9 @@ DeepL-Auth-Key {API KEY}</value>
   <data name="error_message_during_translation" xml:space="preserve">
     <value>An error occurred during translation.</value>
   </data>
+  <data name="error_too_many_requests" xml:space="preserve">
+    <value>Too many requests. Please try again later.</value>
+  </data>
   <data name="invalid_api_key" xml:space="preserve">
     <value>Invalid API key. Please check the API key</value>
   </data>
