@@ -90,7 +90,7 @@ This plugin allows you to use PowerToys Run for translations via the DeepL API.
   - Increase the value of the **"Input Smoothing > Immediate plugins"** setting. This ensures sufficient intervals between API calls, preventing characters from being skipped.  
   - Suggested value: 300ms - 400ms (In my experience)
 
-![image](https://github.com/user-attachments/assets/036f932b-f8db-4878-8f46-2e6f3d521fc1)
+   ![image](https://github.com/user-attachments/assets/036f932b-f8db-4878-8f46-2e6f3d521fc1)
 
   
 
