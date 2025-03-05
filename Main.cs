@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
     {
         private const string DeeplAPIKey = nameof(DeeplAPIKey);
         private const string RemoveLeftSpaces = nameof(RemoveLeftSpaces);
+        private const string DefaultTargetLanguage = nameof(DefaultTargetLanguage);
 
         private static readonly PluginJsonStorage<DeepLTranslatorSetting> Storage = new PluginJsonStorage<DeepLTranslatorSetting>();
         private static readonly DeepLTranslatorSetting Settings = Storage.Load();
@@ -60,8 +62,23 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
                 Value = Settings.RemoveLeftSpaces,
                 PluginOptionType = AdditionalOptionType.Checkbox,
                 Key = RemoveLeftSpaces,
-                DisplayLabel = "Remove Left Spaces",
+                DisplayLabel = Properties.Resources.remove_left_spaces_title,
                 DisplayDescription = Properties.Resources.remove_left_spaces_description,
+            },
+
+            new PluginAdditionalOption()
+            {
+                ComboBoxValue = Settings.DefaultTargetLanguageCode,
+                Key = DefaultTargetLanguage,
+                DisplayLabel = Properties.Resources.default_target_language_code_title,
+                DisplayDescription = Properties.Resources.default_target_language_code_description,
+                PluginOptionType = AdditionalOptionType.Combobox,
+                ComboBoxItems = Enum.GetValues(typeof(LangCodeEnums.Code))
+                                    .Cast<LangCodeEnums.Code>()
+                                    .Select(lang => new KeyValuePair<string, string>(
+                                        lang.ToString(),
+                                        ((int)lang).ToString()
+                                )).ToList(),
             },
 
             new PluginAdditionalOption()
@@ -69,9 +86,10 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
                 TextValue = Settings.DeeplAPIKey,
                 PluginOptionType = AdditionalOptionType.Textbox,
                 Key = DeeplAPIKey,
-                DisplayLabel = "DeepL API Key",
+                DisplayLabel = Properties.Resources.deepL_api_key_title,
                 DisplayDescription = Properties.Resources.deepL_api_key_description,
             },
+
         };
 
         public List<ContextMenuResult> LoadContextMenus(Result selectedResult)
@@ -110,7 +128,7 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
         {
             ArgumentNullException.ThrowIfNull(query);
 
-            var (targetCode, text) = InputInterpreter.Parse(query);
+            var (targetCode, text) = InputInterpreter.Parse(query, LangCodeEnums.Parse(Settings.DefaultTargetLanguageCode));
 
             if (targetCode == LangCodeEnums.Code.UNK)
             {
@@ -148,9 +166,11 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
             {
                 var apiKey = settings.AdditionalOptions.FirstOrDefault(x => x.Key == DeeplAPIKey)?.TextValue ?? string.Empty;
                 var removeLeftSpace = settings.AdditionalOptions.FirstOrDefault(x => x.Key == RemoveLeftSpaces)?.Value ?? false;
-               
+                var defaultTargetLanguage = settings.AdditionalOptions.FirstOrDefault(x => x.Key == DefaultTargetLanguage)?.ComboBoxValue ?? (int)LangCodeEnums.Code.EN;
+
                 Main.Settings.DeeplAPIKey = apiKey;
                 Main.Settings.RemoveLeftSpaces = removeLeftSpace;
+                Main.Settings.DefaultTargetLanguageCode = defaultTargetLanguage;
             }
         }
 

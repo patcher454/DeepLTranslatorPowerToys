@@ -7,33 +7,39 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
 {
     public class InputInterpreter
     {
-        public static (LangCodeEnums.Code, string) Parse(Query query)
+        public static (LangCodeEnums.Code, string) Parse(Query query, LangCodeEnums.Code defaultLangCode)
         {
-            var splited = SplitSearch(query);
+            if (string.IsNullOrWhiteSpace(query.Search))
+                return (LangCodeEnums.Code.UNK, string.Empty);
 
-            if (splited.Length == 2)
+            var parts = query.Search.Split(new[] { ' ' }, 2);
+
+            if (parts.Length == 2)
             {
-                string targetLangCode = splited[0];
-                string text = splited[1];
+                string targetLangCode = parts[0];
+                string text = parts[1];
 
                 if (!string.IsNullOrEmpty(targetLangCode) && !string.IsNullOrEmpty(text))
                 {
                     var target = LangCodeEnums.Parse(targetLangCode);
+                    if (target == LangCodeEnums.Code.UNK)
+                    {
+                        return (defaultLangCode, query.Search);
+                    }
                     return (target, text);
                 }
             }
 
-            return (LangCodeEnums.Code.UNK, string.Empty);
-        }
-
-        private static string[] SplitSearch(Query query)
-        {
-            int secondSearchStartIndex = query.Search.IndexOf(' ');
-            return new string[]
+            if (parts.Length == 1)
             {
-                query.Search.Substring(0, secondSearchStartIndex),
-                query.Search.Substring(secondSearchStartIndex, query.Search.Length - secondSearchStartIndex),
-            };
+                string text = parts[0];
+                if (!string.IsNullOrEmpty(text))
+                {
+                    return (defaultLangCode, text);
+                }
+            }
+
+            return (LangCodeEnums.Code.UNK, string.Empty);
         }
     }
 }

@@ -49,6 +49,15 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator.Enums
             UNK,     // Unknown
         }
 
+        public static Code Parse(int code)
+        {
+            if (code >= 0 && code < (int)Code.UNK)
+            {
+                return (Code)code;
+            }
+            return Code.UNK;
+        }
+
         public static Code Parse(string codeString)
         {
             switch (codeString)

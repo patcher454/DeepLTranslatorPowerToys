@@ -130,6 +130,15 @@
     <value>Please enter the following format
 DeepL-Auth-Key {API KEY}</value>
   </data>
+  <data name="deepL_api_key_title" xml:space="preserve">
+    <value>DeepL API Key</value>
+  </data>
+  <data name="default_target_language_code_description" xml:space="preserve">
+    <value>The target language to use as the default.</value>
+  </data>
+  <data name="default_target_language_code_title" xml:space="preserve">
+    <value>Default Target Language Code</value>
+  </data>
   <data name="error_message_during_translation" xml:space="preserve">
     <value>An error occurred during translation.</value>
   </data>
@@ -147,5 +156,8 @@ DeepL-Auth-Key {API KEY}</value>
   </data>
   <data name="remove_left_spaces_description" xml:space="preserve">
     <value>Remove left whitespace when copying translation results to the clipboard.</value>
+  </data>
+  <data name="remove_left_spaces_title" xml:space="preserve">
+    <value>Remove Left Spaces</value>
   </data>
 </root>
