@@ -281,7 +281,7 @@ namespace Community.PowerToys.Run.Plugin.DeepLTranslator
                 Title = $"{result.Translations[0].DetectedSourceLanguage} -> {result.TargetLangCode} : {result.Translations[0].Text}",
                 IcoPath = iconPath,
                 Score = 300,
-                SubTitle = Properties.Resources.copy_to_clipboard,
+                SubTitle = result.Translations[0].Text,
                 Action = c =>
                 {
                     var ret = false;
