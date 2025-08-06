@@ -92,7 +92,9 @@ This plugin allows you to use PowerToys Run for translations via the DeepL API.
 
    ![image](https://github.com/user-attachments/assets/036f932b-f8db-4878-8f46-2e6f3d521fc1)
 
-  
+### Command Palette Support
+- The same DeepL translation feature is also available via the Command Palette. Give it a try!
+- [TranslateCmdPal](https://github.com/patcher454/TranslateCmdPal)
 
 ### How to Build
 
@@ -101,3 +103,4 @@ This plugin allows you to use PowerToys Run for translations via the DeepL API.
    Community.PowerToys.Run.Plugin.DeepLTranslator\DLL
    ```
 2. **Replace the DLL File:** Replace the DLL file in the folder with the one for your desired version (default build is x64; for ARM, use the ARM version).
+
